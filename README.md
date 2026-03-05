@@ -1,10 +1,12 @@
+![GET SET HIRE Poster](poster.jpg)
+
 # 🚀 GET SET HIRE
 
 **GET SET HIRE** is a comprehensive career readiness educational tool designed to prepare students for their transition into their first professional role. Through a suite of five(5) specialized web apps, the platform provides everything from AI-driven resume building and attire analysis to strategic skill mapping and interview coaching. GetSetHire transforms the job-hunting process into a structured, confidence-building journey, empowering students to articulate their unique value through high-impact storytelling. By mastering these proven strategies, candidates move beyond being merely "prepared" to becoming truly "professional," armed with a narrative that grabs the attention of modern employers.
 
 ---
 
-## 🛠️ The 5-Step Ecosystem
+## 🛠️ The 5 TOOLS
 
 1.  **Interview Attire Checker** - Professional image analysis to boost first-impression confidence.
 2.  **BulletBoost** - AI-powered resume enhancer that quantifies achievements using high-impact action verbs.
@@ -27,7 +29,7 @@ This project utilizes **Google Analytics** to track student engagement and tool 
 ---
 
 ## 👤 Project Lead
-**[Your Name / Catherine]**
+**[ Catherine]**
 *Developed for the transition of students into their first professional roles.*
 
 ---
