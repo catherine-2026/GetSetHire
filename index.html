@@ -49,17 +49,15 @@
             color: white; border: none; padding: 15px; border-radius: 12px;
             cursor: pointer; font-weight: bold; width: 100%; max-width: 300px; font-size: 1rem;
         }
-<footer style="text-align: center; padding: 40px 20px 60px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 50px;">
-    <p style="margin-bottom: 8px;">&copy; 2026 <strong>GET SET HIRE</strong> | Empowering Career Readiness</p>
-    <p>Copyright © 2026 [Catherine N.C.L]. All Rights Reserved.
 
-No part of this application, including code, questions, and graphical assets, may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author. <span style="color: #64748b; font-weight: 600;">[Your Name/Team Name]</span></p>
-</footer>
         /* --- DASHBOARD STYLES --- */
-        #main-hub { display: none; width: 100%; min-height: 100vh; background: #f1f5f9; color: #1e293b; }
+        #main-hub { 
+            display: none; 
+            width: 100%; min-height: 100vh; background: #f1f5f9; color: #1e293b; 
+        }
         
         .dashboard-header { 
-            background: #ffffff; padding: 40px 20px; text-align: center;
+            background: #ffffff; padding: 60px 20px; text-align: center;
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -69,7 +67,6 @@ No part of this application, including code, questions, and graphical assets, ma
             gap: 30px; padding: 0 25px; 
         }
 
-        /* CARD DESIGN */
         .card { 
             background: white; padding: 30px; border-radius: 24px; 
             text-decoration: none; color: inherit; display: flex; flex-direction: column; 
@@ -79,7 +76,6 @@ No part of this application, including code, questions, and graphical assets, ma
 
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        /* App Specific Icons */
         .app-img {
             width: 100%; border-radius: 12px; margin-bottom: 20px;
             aspect-ratio: 16/9; object-fit: cover;
@@ -106,6 +102,12 @@ No part of this application, including code, questions, and graphical assets, ma
         .launch-btn { font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 5px; margin-top: auto; }
         
         #error-msg { color: #ff8a8a; margin-top: 15px; font-size: 14px; display: none; }
+
+        footer {
+            text-align: center; padding: 60px 20px; color: #64748b; 
+            font-size: 0.85rem; line-height: 1.6; border-top: 1px solid #e2e8f0; 
+            background: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -117,18 +119,24 @@ No part of this application, including code, questions, and graphical assets, ma
         <br>
         <button class="login-btn" onclick="checkPassword()">Unlock Hub</button>
         <p id="error-msg">❌ Access denied.</p>
+        
+        <p style="margin-top: 40px; color: #64748b; font-size: 0.75rem;">
+            &copy; 2026 Catherine N.C.L. | All Rights Reserved
+        </p>
     </div>
 
     <div id="main-hub">
         <header class="dashboard-header">
-            <h1 style="margin:0; color: #0f172a; font-size: 2.5rem;">GET SET HIRE</h1>
-            <p style="color: #64748b;">A comprehensive career readiness educational tool designed to prepare students for their transition into their first professional role. Through a suite of five(5) specialized web apps, the platform provides everything from AI-driven resume building and attire analysis to strategic skill mapping and interview coaching. GetSetHire transforms the job-hunting process into a structured, confidence-building journey, empowering students to articulate their unique value through high-impact storytelling. By mastering these proven strategies, candidates move beyond being merely "prepared" to becoming truly "professional," armed with a narrative that grabs the attention of modern employers.</p>
+            <h1 style="margin:0; color: #0f172a; font-size: 2.8rem;">GET SET HIRE</h1>
+            <div style="max-width: 800px; margin: 20px auto; color: #475569; line-height: 1.8;">
+                <p>A comprehensive career readiness educational tool designed to prepare students for their transition into their first professional role. Through a suite of five specialized web apps, the platform provides everything from AI-driven resume building and attire analysis to strategic skill mapping and interview coaching.</p>
+            </div>
         </header>
 
         <div class="container">
             <a href="https://catherine-2026.github.io/InterviewAttireChecker/" class="card attire">
                 <img src="attire.png" alt="Attire Checker" class="app-img">
-                <span class="step-badge b-blue">Phase 01</span>
+                <span class="step-badge b-blue">Tool 01</span>
                 <h3>Attire Checker</h3>
                 <p>Ensure your first impression is perfect with AI-driven attire analysis.</p>
                 <div class="launch-btn">Launch Tool →</div>
@@ -136,7 +144,7 @@ No part of this application, including code, questions, and graphical assets, ma
 
             <a href="https://catherine-2026.github.io/BulletBoost/" class="card bullet">
                 <img src="boost.png" alt="BulletBoost" class="app-img">
-                <span class="step-badge b-green">Phase 02</span>
+                <span class="step-badge b-green">Tool 02</span>
                 <h3>BulletBoost</h3>
                 <p>Quantify your achievements and build high-impact resume bullets.</p>
                 <div class="launch-btn">Launch Tool →</div>
@@ -144,7 +152,7 @@ No part of this application, including code, questions, and graphical assets, ma
 
             <a href="https://catherine-2026.github.io/SkillMapperPro/" class="card mapper">
                 <img src="mapper.png" alt="Skill Mapper" class="app-img">
-                <span class="step-badge b-orange">Phase 03</span>
+                <span class="step-badge b-orange">Tool 03</span>
                 <h3>Skill Mapper Pro</h3>
                 <p>Bridge the gap between your skills and industry requirements.</p>
                 <div class="launch-btn">Launch Tool →</div>
@@ -152,7 +160,7 @@ No part of this application, including code, questions, and graphical assets, ma
 
             <a href="https://catherine-2026.github.io/SkillBuckethrine/" class="card bucket">
                 <img src="bucket.png" alt="Skill Buckethrine" class="app-img">
-                <span class="step-badge b-purple">Phase 04</span>
+                <span class="step-badge b-purple">Tool 04</span>
                 <h3>Skill Buckethrine</h3>
                 <p>Categorize and visualize your professional skill domains effectively.</p>
                 <div class="launch-btn">Launch Tool →</div>
@@ -160,23 +168,34 @@ No part of this application, including code, questions, and graphical assets, ma
 
             <a href="https://catherine-2026.github.io/HireReady/" class="card hire">
                 <img src="hire.png" alt="Hire Ready" class="app-img">
-                <span class="step-badge b-red">Phase 05</span>
+                <span class="step-badge b-red">Tool 05</span>
                 <h3>Hire Ready</h3>
                 <p>Master behavioral interview questions using the STAR storytelling method.</p>
                 <div class="launch-btn">Launch Tool →</div>
             </a>
         </div>
+
+        <footer>
+            <p>&copy; 2026 <strong>GET SET HIRE</strong> | Empowering Career Readiness</p>
+            <p><strong>Copyright © 2026 Catherine N.C.L. All Rights Reserved.</strong></p>
+            <p style="max-width: 600px; margin: 10px auto; font-style: italic; color: #94a3b8;">
+                No part of this application, including code, questions, and graphical assets, may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
+            </p>
+        </footer>
     </div>
 
     <script>
         function checkPassword() {
             const secretPassword = "hire-me-2026"; 
-            const userInput = document.getElementById('pass-input').value;
+            const userInput = document.getElementById('pass-input').value.toLowerCase(); // Makes it non-case-sensitive for easier login
             const errorMsg = document.getElementById('error-msg');
+            const loginScreen = document.getElementById('login-screen');
+            const mainHub = document.getElementById('main-hub');
 
             if (userInput === secretPassword) {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('main-hub').style.display = 'block';
+                loginScreen.style.display = 'none';
+                mainHub.style.display = 'block';
+                // Adjust body for dashboard view
                 document.body.style.display = 'block'; 
                 document.body.style.background = '#f1f5f9';
             } else {
@@ -184,6 +203,7 @@ No part of this application, including code, questions, and graphical assets, ma
             }
         }
         
+        // Allow "Enter" key to submit
         document.getElementById('pass-input').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') checkPassword();
         });
