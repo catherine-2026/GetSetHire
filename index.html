@@ -15,168 +15,170 @@
     
     <style>
         :root {
-            --blue: #2563eb; --green: #16a34a; --orange: #ea580c; --purple: #9333ea; --red: #dc2626;
+            --blue: #2563eb; --green: #10b981; --orange: #f59e0b; --purple: #8b5cf6; --red: #ef4444;
         }
 
         body { 
             font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            color: #1e293b;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0; background: #0f172a; color: #f8fafc;
+            min-height: 100vh; display: flex; justify-content: center; align-items: center;
+            transition: background 0.5s ease;
         }
 
-        /* LOGIN SCREEN STYLES */
+        /* --- LOGIN PAGE STYLES --- */
         #login-screen { 
-            text-align: center; 
-            background: white; 
-            padding: 50px; 
-            border-radius: 24px; 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
-            width: 90%; 
-            max-width: 400px; 
+            text-align: center; background: rgba(255,255,255,0.05); 
+            padding: 40px; border-radius: 30px; backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); width: 90%; max-width: 800px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        #login-screen h1 { color: var(--blue); margin-bottom: 10px; font-weight: 800; }
-        input[type="password"] { 
-            width: 100%; padding: 14px; margin: 25px 0; border: 2px solid #e2e8f0; 
-            border-radius: 12px; box-sizing: border-box; font-size: 16px; outline: none;
-        }
-        input[type="password"]:focus { border-color: var(--blue); }
-        .login-btn { 
-            background: var(--blue); color: white; border: none; padding: 14px; 
-            border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1rem;
-        }
-        #error-msg { color: var(--red); margin-top: 15px; font-size: 14px; display: none; font-weight: 600; }
-
-        /* MAIN HUB STYLES (Hidden by default) */
-        #main-hub { display: none; width: 100%; text-align: center; }
         
-        header { 
-            background: white; padding: 60px 20px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 40px; 
+        .login-poster {
+            width: 100%; max-width: 650px; border-radius: 15px;
+            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .hero-poster {
-            width: 95%; max-width: 1000px; border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15); margin: 30px auto;
-            display: block; transition: transform 0.4s ease;
+        input[type="password"] { 
+            width: 100%; max-width: 300px; padding: 15px; margin: 20px 0; border: none; 
+            border-radius: 12px; background: rgba(255,255,255,0.1); color: white;
+            font-size: 16px; text-align: center; outline: none; border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .login-btn { 
+            background: linear-gradient(to r, var(--blue), var(--purple));
+            color: white; border: none; padding: 15px; border-radius: 12px;
+            cursor: pointer; font-weight: bold; width: 100%; max-width: 300px; font-size: 1rem;
+        }
+
+        /* --- DASHBOARD STYLES --- */
+        #main-hub { display: none; width: 100%; min-height: 100vh; background: #f1f5f9; color: #1e293b; }
+        
+        .dashboard-header { 
+            background: #ffffff; padding: 40px 20px; text-align: center;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .container { 
-            max-width: 1200px; margin: 0 auto 60px; 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; padding: 0 20px; 
+            max-width: 1300px; margin: 50px auto; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; padding: 0 25px; 
         }
 
         /* CARD DESIGN */
         .card { 
-            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
-            padding: 40px 30px; border-radius: 24px; text-decoration: none; color: inherit; 
-            display: flex; flex-direction: column; transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.5); position: relative; overflow: hidden;
-            text-align: left;
+            background: white; padding: 30px; border-radius: 24px; 
+            text-decoration: none; color: inherit; display: flex; flex-direction: column; 
+            transition: all 0.4s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 8px solid transparent;
         }
-        .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 8px; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: white; }
 
-        .attire::before { background: var(--blue); }
-        .bullet::before { background: var(--green); }
-        .mapper::before { background: var(--orange); }
-        .bucket::before { background: var(--purple); }
-        .hire::before { background: var(--red); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        .step-num { font-size: 0.75rem; font-weight: 800; color: #64748b; background: #f1f5f9; padding: 4px 12px; border-radius: 20px; width: fit-content; margin-bottom: 15px; }
-        .card h3 { font-size: 1.4rem; margin: 5px 0; color: #0f172a; }
-        .card p { color: #475569; line-height: 1.6; margin-bottom: 20px; }
-        .launch-btn { font-weight: 700; color: var(--blue); font-size: 0.9rem; margin-top: auto; }
+        /* App Specific Icons */
+        .app-img {
+            width: 100%; border-radius: 12px; margin-bottom: 20px;
+            aspect-ratio: 16/9; object-fit: cover;
+        }
 
-        footer { padding: 40px; color: #94a3b8; font-size: 0.9rem; }
+        .attire { border-bottom-color: var(--blue); }
+        .bullet { border-bottom-color: var(--green); }
+        .mapper { border-bottom-color: var(--orange); }
+        .bucket { border-bottom-color: var(--purple); }
+        .hire { border-bottom-color: var(--red); }
+
+        .step-badge {
+            display: inline-block; padding: 4px 12px; border-radius: 50px;
+            font-size: 0.75rem; font-weight: 800; margin-bottom: 10px;
+        }
+        .b-blue { background: #eff6ff; color: var(--blue); }
+        .b-green { background: #ecfdf5; color: var(--green); }
+        .b-orange { background: #fffbeb; color: var(--orange); }
+        .b-purple { background: #f5f3ff; color: var(--purple); }
+        .b-red { background: #fef2f2; color: var(--red); }
+
+        .card h3 { font-size: 1.5rem; margin: 5px 0; color: #0f172a; }
+        .card p { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+        .launch-btn { font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 5px; margin-top: auto; }
+        
+        #error-msg { color: #ff8a8a; margin-top: 15px; font-size: 14px; display: none; }
     </style>
 </head>
 <body>
 
     <div id="login-screen">
-        <h1>GET SET HIRE</h1>
-        <p>Student Career Readiness Portal</p>
+        <img src="poster.jpg" alt="GET SET HIRE" class="login-poster">
+        <h1>Welcome Back</h1>
         <input type="password" id="pass-input" placeholder="Enter Access Code">
-        <button class="login-btn" onclick="checkPassword()">Unlock Dashboard</button>
-        <p id="error-msg">❌ Access denied. Please check your code.</p>
+        <br>
+        <button class="login-btn" onclick="checkPassword()">Unlock Hub</button>
+        <p id="error-msg">❌ Access denied.</p>
     </div>
 
     <div id="main-hub">
-        <header>
-            <h1>GET SET HIRE</h1>
-            <p style="color: #64748b; font-size: 1.2rem; max-width: 1200px; margin: 10px auto;">The Digital Toolkit for Career Success</p>
-            <img src="poster.jpg" alt="Get Set Hire Poster" class="hero-poster">
+        <header class="dashboard-header">
+            <h1 style="margin:0; color: #0f172a; font-size: 2.5rem;">GET SET HIRE</h1>
+            <p style="color: #64748b;">A comprehensive career readiness educational tool designed to prepare students for their transition into their first professional role. Through a suite of five(5) specialized web apps, the platform provides everything from AI-driven resume building and attire analysis to strategic skill mapping and interview coaching. GetSetHire transforms the job-hunting process into a structured, confidence-building journey, empowering students to articulate their unique value through high-impact storytelling. By mastering these proven strategies, candidates move beyond being merely "prepared" to becoming truly "professional," armed with a narrative that grabs the attention of modern employers.</p>
         </header>
 
         <div class="container">
             <a href="https://catherine-2026.github.io/InterviewAttireChecker/" class="card attire">
-                <div class="step-num">STEP 01</div>
+                <img src="attire.png" alt="Attire Checker" class="app-img">
+                <span class="step-badge b-blue">Phase 01</span>
                 <h3>Attire Checker</h3>
-                <p>AI image analysis to ensure you make the perfect first impression.</p>
-                <span class="launch-btn">Open Tool →</span>
+                <p>Ensure your first impression is perfect with AI-driven attire analysis.</p>
+                <div class="launch-btn">Launch Tool →</div>
             </a>
 
             <a href="https://catherine-2026.github.io/BulletBoost/" class="card bullet">
-                <div class="step-num">STEP 02</div>
+                <img src="boost.png" alt="BulletBoost" class="app-img">
+                <span class="step-badge b-green">Phase 02</span>
                 <h3>BulletBoost</h3>
-                <p>Transform your resume with AI-optimized achievement bullets.</p>
-                <span class="launch-btn">Open Tool →</span>
+                <p>Quantify your achievements and build high-impact resume bullets.</p>
+                <div class="launch-btn">Launch Tool →</div>
             </a>
 
             <a href="https://catherine-2026.github.io/SkillMapperPro/" class="card mapper">
-                <div class="step-num">STEP 03</div>
+                <img src="mapper.png" alt="Skill Mapper" class="app-img">
+                <span class="step-badge b-orange">Phase 03</span>
                 <h3>Skill Mapper Pro</h3>
-                <p>Align your competencies with industry-specific requirements.</p>
-                <span class="launch-btn">Open Tool →</span>
+                <p>Bridge the gap between your skills and industry requirements.</p>
+                <div class="launch-btn">Launch Tool →</div>
             </a>
 
             <a href="https://catherine-2026.github.io/SkillBuckethrine/" class="card bucket">
-                <div class="step-num">STEP 04</div>
+                <img src="bucket.png" alt="Skill Buckethrine" class="app-img">
+                <span class="step-badge b-purple">Phase 04</span>
                 <h3>Skill Buckethrine</h3>
-                <p>Strategically organize your professional skills into clear categories.</p>
-                <span class="launch-btn">Open Tool →</span>
+                <p>Categorize and visualize your professional skill domains effectively.</p>
+                <div class="launch-btn">Launch Tool →</div>
             </a>
 
             <a href="https://catherine-2026.github.io/HireReady/" class="card hire">
-                <div class="step-num">STEP 05</div>
+                <img src="hire.png" alt="Hire Ready" class="app-img">
+                <span class="step-badge b-red">Phase 05</span>
                 <h3>Hire Ready</h3>
-                <p>Final prep for behavioral interviews using the STAR framework.</p>
-                <span class="launch-btn">Open Tool →</span>
+                <p>Master behavioral interview questions using the STAR storytelling method.</p>
+                <div class="launch-btn">Launch Tool →</div>
             </a>
         </div>
-
-        <footer>
-            Copyright © 2026 [Catherine N.C.L]. All Rights Reserved.
-
-No part of this application, including code, questions, and graphical assets, may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
-        </footer>
     </div>
 
     <script>
         function checkPassword() {
-            // SET YOUR PASSWORD HERE
             const secretPassword = "hire-me-2026"; 
-            
             const userInput = document.getElementById('pass-input').value;
             const errorMsg = document.getElementById('error-msg');
-            const loginScreen = document.getElementById('login-screen');
-            const mainHub = document.getElementById('main-hub');
 
             if (userInput === secretPassword) {
-                loginScreen.style.display = 'none';
-                mainHub.style.display = 'block';
-                document.body.style.display = 'block'; // Reset flex for scrolling
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('main-hub').style.display = 'block';
+                document.body.style.display = 'block'; 
+                document.body.style.background = '#f1f5f9';
             } else {
                 errorMsg.style.display = 'block';
             }
         }
-
-        // Enter key support
+        
         document.getElementById('pass-input').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') checkPassword();
         });
