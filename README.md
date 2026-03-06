@@ -6,7 +6,7 @@
 
 ---
 
-## 🛠️ The 5 TOOLS
+## 🛠️ 5 SMART EDUCATIONAL TOOLS
 
 1.  **Interview Attire Checker** - Professional image analysis to boost first-impression confidence.
 2.  **BulletBoost** - AI-powered resume enhancer that quantifies achievements using high-impact action verbs.
