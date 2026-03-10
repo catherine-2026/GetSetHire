@@ -12,7 +12,13 @@
       gtag('js', new Date());
       gtag('config', 'G-GF0TMG086V');
     </script>
-    
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
     <style>
         :root {
             --blue: #2563eb; --green: #10b981; --orange: #f59e0b; --purple: #8b5cf6; --red: #ef4444;
